@@ -1,0 +1,38 @@
+# LED rgb 깜박이기
+import RPi.GPIO as GPIO
+import time
+
+is_run = True
+red = 17
+green = 27
+blue = 22
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(red, GPIO.OUT)
+GPIO.setup(green, GPIO.OUT)
+GPIO.setup(blue, GPIO.OUT)
+
+GPIO.output(red, True)
+GPIO.output(green, True)
+GPIO.output(blue, True)
+
+try:
+    while True:
+        # Red + Green = Yellow / Red + blue = Pink  / Green + blue = 하늘색
+        # Red + green + blue = white
+
+        GPIO.output(red, False)
+        GPIO.output(green, True)
+        GPIO.output(blue, True)
+        time.sleep(1)
+        GPIO.output(red, True)
+        GPIO.output(green, False)
+        GPIO.output(blue, True)
+        time.sleep(1)
+        GPIO.output(red, True)
+        GPIO.output(green, True)
+        GPIO.output(blue, False)
+        time.sleep(1)
+        
+except KeyboardInterrupt:
+    GPIO.cleanup()
