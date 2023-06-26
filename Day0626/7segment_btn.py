@@ -13,13 +13,13 @@ Seven_Seg_Num = ((1,1,1,1,1,1,0), #0
                 (1,1,1,1,1,1,1), #8
                 (1,1,1,1,0,1,1)) #9
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(Gpio_Pin_Num[0],GPIO.OUT)
-GPIO.setup(Gpio_Pin_Num[1],GPIO.OUT)
-GPIO.setup(Gpio_Pin_Num[2],GPIO.OUT)
-GPIO.setup(Gpio_Pin_Num[3],GPIO.OUT)
-GPIO.setup(Gpio_Pin_Num[4],GPIO.OUT)
-GPIO.setup(Gpio_Pin_Num[5],GPIO.OUT)
-GPIO.setup(Gpio_Pin_Num[6],GPIO.OUT)
+GPIO.setup(Gpio_Pin_Num[0],GPIO.OUT)  # A pin(20)
+GPIO.setup(Gpio_Pin_Num[1],GPIO.OUT)  # B pin(21)
+GPIO.setup(Gpio_Pin_Num[2],GPIO.OUT)  # C pin(22)
+GPIO.setup(Gpio_Pin_Num[3],GPIO.OUT)  # D pin(23)
+GPIO.setup(Gpio_Pin_Num[4],GPIO.OUT)  # E pin(24)
+GPIO.setup(Gpio_Pin_Num[5],GPIO.OUT)  # F pin(25)
+GPIO.setup(Gpio_Pin_Num[6],GPIO.OUT)  # G pin(26)
 GPIO.setup(btn, GPIO.IN)
 i = 0
 while True:

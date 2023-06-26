@@ -62,3 +62,8 @@ src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-raspberrypi-2023/main/i
    - 파이 카메라 v1.3 ov5647
    - OpenCV 4.7
    - 카메라 연동 및 QRcode
+
+## Day0626
+- 라즈베리파이 학습
+   - 7segment와 스위치 활용
+      - 스위치 클릭 시 7segment값 1씩 증가.
