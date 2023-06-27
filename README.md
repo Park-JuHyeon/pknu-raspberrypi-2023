@@ -67,3 +67,28 @@ src="https://raw.githubusercontent.com/Park-JuHyeon/pknu-raspberrypi-2023/main/i
 - 라즈베리파이 학습
    - 7segment와 스위치 활용
       - 스위치 클릭 시 7segment값 1씩 증가.
+
+## Day0627
+- 라즈베리파이 학습
+   - switch 활용한 Led/buzzer제어
+      - Buzzer : 주파수 활용해 노래 출력
+      - Led : 스위치 클릭시 LED 제어
+
+- 학습내용정리
+   - RPI GPIO Interrupt
+
+   - 핀설정
+      - GPIO.add_event_detect(channel, GPIO.Mode)
+      - channel : Pin number
+      - GPIO.Mode : RISING or FALLING or BOTH
+   - 콜백함수 설정
+      - GPIO.add_event_callback(channel, function)
+         - channel: Pin number
+         - function : call back function
+
+   - 하나의 인터럽트 사용시
+   - GPIO.add_event_detect(channel, GPIO.Mode, callback=my_callback) : my_callback은 정의하는 함수
+
+   - LED를 제어하는 출력문구는 GPIO.output(핀넘버, True/False) : True: led on , False : led off
+   - Buzzer를 제어하는 출력문구는 ChangeFrequency(선언한 주파수)
+   - GPIO.setup전 GPIO.setmode(GPIO.BCM/BOARD) 필수
