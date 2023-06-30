@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		We are in Led_TEST
+	</head>
+
+	<body>
+		<h1> Let's go to the Led_Test! </h1>
+		<div class="main">
+			<div>
+				<button onclick="led_on()"> LED ON </button>
+				<button onclick="led_off()"> LED OFF </button>
+			</div>
+		</div>
+
+		<script>
+			function led_on(){
+				fetch("/led/on")
+				.then(response=> response.text())
+				.then(data => {
+					console.log(data);
+					let result = document.querySelector("#result");
+					if(data == "ok"){
+						result.innerHTML = "<h1> LED is running </h1>";
+					}
+					else{
+						result.innerHTML = "<h1> error </h1>";
+					}
+				});
+			}
+
+			function led_off(){
+				fetch("/led/off")
+				.then(response => response.text())
+				.then(data => {
+					console.log(data);
+					let result = document.querySelector("#result");
+					if (data == "ok"){
+						result.innerHTML = "<h1> LED is Stop! </h1>";
+					}
+					else {
+						result.innerHTML = "<h1> error </h1>";
+					}
+				});
+			}
+		</script>
+	</body>
+</html>
